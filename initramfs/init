@@ -1,0 +1,14 @@
+#!/bin/sh
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devtmpfs none /dev
+
+clear
+echo "================================="
+echo "      LunairOS Mirage 0.1.0"
+echo "================================="
+echo "Ao usar esse sistema, voce concorda com os termos de uso da Lunair Foundation."
+
+echo "lunairos" > /proc/sys/kernel/hostname
+exec setsid cttyhack /bin/sh
