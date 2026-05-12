@@ -3,8 +3,8 @@
 TOP := $(CURDIR)
 
 PROJECT ?= LunairOS
-VERSION ?= 0.1.0
-CODENAME ?= Mirage
+VERSION ?= 0.1.1
+CODENAME ?= Turmoil
 KERNEL_VERSION ?= 6.9.12
 
 BUILD ?= $(TOP)/build
