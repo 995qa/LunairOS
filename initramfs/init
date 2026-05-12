@@ -4,10 +4,10 @@ mount -t proc none /proc
 mount -t sysfs none /sys
 mount -t devtmpfs none /dev 2>/dev/null || true
 
-echo "================================="
-echo "      LunairOS Mirage 0.1.0"
-echo "================================="
-echo "Ao usar esse sistema, voce concorda com os termos de uso da Lunair Foundation."
+clear
+
+/libexec/lunairos/hasinit
+rm -f /libexec/lunairos/hasinit
 
 echo "lunairos" > /proc/sys/kernel/hostname 2>/dev/null || true
 
