@@ -3,7 +3,7 @@ LunairOS é uma distribuição Linux independente focada em trazer o esqueumorfi
 
 Atual lançamento:
 
-**LunairOS 0.1.0 "Mirage"**
+**LunairOS 0.1.1 "Turmoil"**
 
 ## Status
 Inicializa um kernel Linux customizado com uma initramfs baseada em BusyBox.
