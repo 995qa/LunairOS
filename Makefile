@@ -29,7 +29,7 @@ all: release
 
 world: clean release
 
-release: iso
+release: check iso
 
 buildkernel: kernel
 
@@ -55,7 +55,7 @@ run qemu: release
 
 check:
 >@missing=""; \
->for cmd in make gcc wget tar xz bc bison flex cpio gzip grub-mkrescue xorriso file; do \
+>for cmd in make gcc wget tar xz bc bison flex cpio gzip grub-mkrescue xorriso mtools file; do \
 >    command -v $$cmd >/dev/null 2>&1 || missing="$$missing $$cmd"; \
 >done; \
 >if [ -n "$$missing" ]; then \
