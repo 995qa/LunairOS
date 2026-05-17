@@ -12,6 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Notify Discord (start)
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d "{\"content\":\"🚀 Build da LunairOS iniciada!\nRepo: $GITHUB_REPOSITORY\nCommit: $GITHUB_SHA\"}" \
+            "$DISCORD_WEBHOOK_URL"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -30,7 +39,7 @@ jobs:
           name: LunairOS-Turmoil-0.1.1
           path: build/*.iso
 
-      - name: Notify Discord
+      - name: Notify Discord (finish)
         if: always()
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
